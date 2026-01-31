@@ -15,12 +15,19 @@ This repo contains instructions for setting up a [PiHole](https://pi-hole.net) D
     * Buying a kit where Raspberry Pi OS has already been installed on the SD card or the SSD makes things a lot easier. 
     * I purchased [this one from CanaKit](https://www.amazon.com/dp/B0DKQS5CXB), and it's both overkill and expensive.  Given that my current PiHole has been running for 8 years, I think buying a "future proof" Raspberry is a smart investment.
 
-## Install
+## Installation
 
 * Connect peripherals to the Raspberry Pi.
     * Connect a monitor to the HDMI port.  My Raspberry Pi has 2 HDMI mini ports, and the kit included an HDMI to HDMI mini cable.
     * Connect a mouse and keyboard to the USB ports.  My Raspberry Pi has 4 USB-A ports, so I connected an older mouse and keyboard with USB-A cables.
 * Plug in the power supply to the DC power port, which on my Raspberry is also the USB-C port. The Raspberry Pi does not have an on/off button; once you connect power, it will turn on.  A small green light on the front will indicate that it has power and is booting up.
+* Your monitor should show the Raspberry Pi desktop and a welcome message.  Use your mouse to click "Next" and start setup.
+    * Set your country, language, and timezone.
+    * Create a username and password.  Store them in a secure location.
+    * Select a WiFi network and enter the password.
+    * Select Chromium as the default and check the option to uninstall the unused browser.
+    * Allow the software update.
+
 
 
 ## Administration
