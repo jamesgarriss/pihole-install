@@ -36,11 +36,11 @@ One other thing you will need:
 
 The initial configuration of the Raspberry Pi requires a monitor, keyboard, and mouse.  Once Pi-hole is running, they will no longer be necessary, since you can remote connect to the Raspberry Pi via ssh and via a dashboard.  More on that later.
 
-* Connect peripherals to the Raspberry Pi.  
-    * Connect a monitor to the HDMI port.  My Raspberry Pi has 2 HDMI mini ports, and the kit included an HDMI to HDMI mini cable.
-    * Connect a mouse and keyboard to the USB ports.  My Raspberry Pi has 4 USB-A ports, so I connected an older mouse and keyboard with USB-A cables.
-
+* Connect a monitor to the HDMI port.  My Raspberry Pi has 2 HDMI-mini ports, and the kit included an HDMI to HDMI-mini cable.
+* Connect a mouse and keyboard to the USB-A ports.  My Raspberry Pi has 4 USB-A ports.
 * Plug in the power supply to the DC power port, which on my Raspberry is also the USB-C port. The Raspberry Pi does not have an on/off button; once you connect power, it will turn on.  A small green light on the front will indicate that it has power and is booting up.
+
+When you turn on the Raspberry Pi, you will need to do some initial configuration.
 
 * Your monitor should show the Raspberry Pi desktop and a welcome message.  (Change to the correct input source on your monitor if necessary.)  Use your mouse to click "Next" and start setup.
     * Set your country, language, and timezone.
@@ -49,10 +49,9 @@ The initial configuration of the Raspberry Pi requires a monitor, keyboard, and 
     * Select Chromium as the default and check the option to uninstall the unused browser.
     * Allow the software update.
     * Once it's up to date, restart.
-
 * Once it restarts, you should see the Raspberry Pi OS desktop; it is similar to a MacOS or Windows.  You need to enable ssh.
     * Start the terminal.  It's a black icon in the upper left corner.  Alternatively, try CTRL + ALT + T.
-    * Make sure that the OS is completely updated by running this command in the terminal.  If you are not aware, prefacing a command with "sudo" means "run this command as the administrator.  When I ran this, it did not need any updates.
+    * Make sure that the OS is completely updated by running this command in the terminal.  (If you are not aware, prefacing a command with "sudo" means "run this command as the administrator. Use sudo carefully.)  When I ran this, it did not need any updates.
         ```
         sudo apt update && sudo apt upgrade -y
         ```
