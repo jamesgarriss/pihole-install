@@ -24,6 +24,14 @@ Purchase a Raspberry Pi.  Things to consider when selecting a Raspberry Pi:
 * Buying a kit where Raspberry Pi OS has already been installed on an SD card or  SSD is very convenient.  This guide assumes this is what you have. 
 * I purchased [this one from CanaKit](https://www.amazon.com/dp/B0DKQS5CXB), and it's both overkill and expensive.  Given that my current Pi-hole has been running for 8 years, I think buying a "future proof" Raspberry is a smart investment.
 
+Things you will need just for setup:
+* An HDMI monitor
+* A USB-A mouse
+* A USG-A mouse
+
+One other thing you will need:
+* An ethernet cable
+
 ## Installation
 
 The initial configuration of the Raspberry Pi requires a monitor, keyboard, and mouse.  Once Pi-hole is running, they will no longer be necessary, and you can remote connect to the Raspberry Pi via ssh.
