@@ -50,7 +50,7 @@ When you turn on the Raspberry Pi, you will need to do some initial configuratio
 
 Once it restarts, you should see the Raspberry Pi OS desktop; it is similar to a MacOS or Windows.  You need to enable ssh.
 * Start the terminal.  It's a black icon in the upper left corner.  Alternatively, try `CTRL + ALT + T`.
-* Make sure that the OS is completely updated by running the following command in the terminal.  (If you are not aware, prefacing a command with "sudo" means "run this command as the administrator." Use sudo carefully.)  When I ran this, it did not need any updates.
+* Make sure that the OS is completely updated by running the following command in the terminal.  (If you are not aware, prefacing a command with `sudo` means "run this command as the administrator." Use `sudo` carefully.)  When I ran this, it did not need any updates.
     ```
     sudo apt update && sudo apt upgrade -y
     ```
@@ -71,7 +71,7 @@ At this point, you have a functioning computer.  Now it's time to install Pi-hol
     curl -sSL https://install.pi-hole.net | bash
     ```
 * You should see a window with the Pi-hole Automated Installer.  If it's all black, use your mouse to slightly enlarge the window.  Run through the wizard.
-    * Choose eth0 as the interface.
+    * Choose "eth0" as the interface.
     * Choose "Quad9 (filtered, DNSSEC)" for the Upstream DNS provider.
     * Select "Yes" to include StevenBlack's Unified Hosts List.
     * Select "Yes" to enable query logging.
