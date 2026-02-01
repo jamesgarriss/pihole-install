@@ -25,16 +25,16 @@ Purchase a Raspberry Pi.  Things to consider when selecting a Raspberry Pi:
 * I purchased [this one from CanaKit](https://www.amazon.com/dp/B0DKQS5CXB), and it's both overkill and expensive.  Given that my current Pi-hole has been running for 8 years, I think buying a "future proof" Raspberry is a smart investment.
 
 Things you will need just for setup:
-* An HDMI monitor
-* A USB-A mouse
-* A USG-A mouse
+* HDMI monitor
+* USB-A mouse
+* USB-A mouse
 
 One other thing you will need:
-* An ethernet cable
+* Ethernet cable
 
 ## Installation
 
-The initial configuration of the Raspberry Pi requires a monitor, keyboard, and mouse.  Once Pi-hole is running, they will no longer be necessary, and you can remote connect to the Raspberry Pi via ssh.
+The initial configuration of the Raspberry Pi requires a monitor, keyboard, and mouse.  Once Pi-hole is running, they will no longer be necessary, since you can remote connect to the Raspberry Pi via ssh and via a dashboard.  More on that later.
 
 * Connect peripherals to the Raspberry Pi.  
     * Connect a monitor to the HDMI port.  My Raspberry Pi has 2 HDMI mini ports, and the kit included an HDMI to HDMI mini cable.
