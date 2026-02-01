@@ -120,3 +120,8 @@ If you ever need to turn off your Raspberry Pi, ssh to it and run this command a
     sudo shutdown now
     ```
 * To start it up again, simply plug in the power cable.
+
+TODO
+* Commands about updating Raspberry Pi OS
+* Commands about updating Pi-hole
+* Adding specific sites to block
