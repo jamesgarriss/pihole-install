@@ -88,37 +88,36 @@ Verify Pi-hole is running via the terminal.  You should see a lot of green check
 sudo pihole status
 ```
 
-* The password created by the installer is hard to remember.  If you want to change it (perhaps to the same password as that for the Raspberry Pi OS, just to make life easy), run this command on the terminal (and save the new password):
-    ```
-    sudo pihole setpassword
-    ```
+The password created by the installer is hard to remember.  If you want to change it (perhaps to the same password as that for the Raspberry Pi OS, just to make life easy), run this command on the terminal (and save the new password):
+```
+sudo pihole setpassword
+```
 
-* ssh to the Raspberry Pi from your computer's terminal using the username and password you set previously and IPv4 address noted above:
-    * Use this command, where "ipaddress" is the value of IPv4 above:
-        ```
-        ssh username@ipaddress
-        ```
+Now it's time to make sure that you can remotely access the Raspberry Pi using ssh.  From one of your computers, start the terminal. 
+* Use this command, where "ipaddress" is the value of IPv4 above and "username" is the username of the Raspberry Pi account.
+    ```
+    ssh username@ipaddress
+    ```
     * When questioned about the key, select yes.
     * Enter the password.  
     * If this works, it allows you to make changes to your Raspberry Pi and the Pi-hole software without having to connect it to a monitor, keyboard, and mouse.  This is convenient.
 
-* On the Raspberry Pi, verify Pi-hole is working.  Start the web browser (the world icon in uppper left) and go to http://ipaddress/admin, where "ipaddress" is the value of IPv4 above.  Login with the Pi-hole password.  You should see the Pi-hole dashboard.
-    * Repeat this from a different computer on your network.  You should get the same dashboard.  This allows you to check on your Pi-hole and make updates without having to connect it to a monitor, keyboard, and mouse.  This is also convenient.
+On the Raspberry Pi, verify Pi-hole is working.  Start the web browser (the world icon in uppper left) and go to http://ipaddress/admin, where "ipaddress" is the value of IPv4 above.  Login with the Pi-hole password.  You should see the Pi-hole dashboard.
+* Repeat this from one of your computers.  You should get the same dashboard.  This allows you to check on your Pi-hole and make updates without having to connect it to a monitor, keyboard, and mouse.  This is also convenient.
 
-* Login to the modem control panel and allocate the IP of the Raspberry Pi so that it always has a fixed IP address.  The modem may need to restart.
+Login to the modem control panel and allocate the IP of the Raspberry Pi so that it always has a fixed IP address.  The modem may need to restart.
   
-* Login to the router control panel and set its DNS to the IP of the Raspberry Pi.  This is what makes the adblocker work.  The wireless router may need to restart.
-    * To test this, go to a web page that normally serves a lot of annoying ads.  The ads should be replaced with white space.
-    * Note: Pi-hole cannot block all ads.  YouTube ads, for example, are not blocked.
+Login to the router control panel and set its DNS to the IP of the Raspberry Pi.  This is what makes the adblocker work.  The wireless router may need to restart.
+* To test this, go to a web page that normally serves a lot of annoying ads.  The ads should be replaced with white space.
+* Note: Pi-hole cannot block all ads.  YouTube ads, for example, are not blocked.
 
-* If you ever need to turn off your Raspberry Pi, ssh to it and run this command and when it finishes, unplug the power cable.
+Now that everything is running, remove the mouse, keyboard, and HDMI cables from the Raspberry Pi.  It should be able to work months at a time without changes.
+
+## Administration
+
+If you ever need to turn off your Raspberry Pi, ssh to it and run this command and when it finishes, unplug the power cable.
     * Shutdown the computer:
         ```
         sudo shutdown now
         ```
     * To start it up again, simply plug in the power cable.
-
-* Now that everything is running, remove the mouse, keyboard, and HDMI cables from the Raspberry Pi.  It should be able to work months at a time without changes.
-
-## Administration
-
