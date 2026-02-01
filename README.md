@@ -42,7 +42,7 @@ The initial configuration of the Raspberry Pi requires a monitor, keyboard, and 
 
 When you turn on the Raspberry Pi, you will need to do some initial configuration.
 
-* Your monitor should show the Raspberry Pi desktop and a welcome message.  (Change to the correct input source on your monitor if necessary.)  Use your mouse to click "Next" and start setup.
+* Your monitor should show the Raspberry Pi desktop and a welcome message.  (Change to the correct input source on your monitor if necessary.)  Use your mouse to click "Next" and start the setup wizard.
     * Set your country, language, and timezone.
     * Create a username and password.  This is for an account on the Raspberry Pi OS.  Store them in a secure location.  (A different account will be created later for Pi-hole.)
     * Select a WiFi network and enter the password.
@@ -50,8 +50,8 @@ When you turn on the Raspberry Pi, you will need to do some initial configuratio
     * Allow the software update.
     * Once it's up to date, restart.
 * Once it restarts, you should see the Raspberry Pi OS desktop; it is similar to a MacOS or Windows.  You need to enable ssh.
-    * Start the terminal.  It's a black icon in the upper left corner.  Alternatively, try CTRL + ALT + T.
-    * Make sure that the OS is completely updated by running this command in the terminal.  (If you are not aware, prefacing a command with "sudo" means "run this command as the administrator. Use sudo carefully.)  When I ran this, it did not need any updates.
+    * Start the terminal.  It's a black icon in the upper left corner.  Alternatively, try `CTRL + ALT + T`.
+    * Make sure that the OS is completely updated by running the following command in the terminal.  (If you are not aware, prefacing a command with "sudo" means "run this command as the administrator." Use sudo carefully.)  When I ran this, it did not need any updates.
         ```
         sudo apt update && sudo apt upgrade -y
         ```
@@ -59,18 +59,19 @@ When you turn on the Raspberry Pi, you will need to do some initial configuratio
         ```
         sudo systemctl enable --now ssh
         ```
-    * Verify that it is "active (running)".  After you verify, you may need to CTRL-C to return to the prompt.
+    * Verify that it is "active (running)" by running the following command in the terminal.  After you verify, you may need to `CTRL-C` to return to the prompt.
         ```
         systemctl status ssh
         ```
 
-* Connect your Raspberry Pi to your modem with an ethernet cable.
+Because the Raspberry Pi is functioning as a DNS server, it should have as little latency as possible.  To reduce latency, connect the Raspberry Pi to your modem with an ethernet cable.
 
-* Install Pi-hole with this command:
+At this point, you have a functioning computer.  Now it's time to install Pi-hole.
+* Use this command in the terminal:
     ```
     curl -sSL https://install.pi-hole.net | bash
     ```
-    * You should see a window with the Pi-hole Automated Installer.  If it's all black, use your mouse to slightly enlarge the window.
+* You should see a window with the Pi-hole Automated Installer.  If it's all black, use your mouse to slightly enlarge the window.  Run through the wizard.
     * Choose eth0 as the interface.
     * Choose "Quad9 (filtered, DNSSEC)" for the Upstream DNS provider.
     * Select "Yes" to include StevenBlack's Unified Hosts List.
@@ -82,10 +83,10 @@ When you turn on the Raspberry Pi, you will need to do some initial configuratio
         * Login password
     * This password is the password for Pi-hole; it is not the same as the password for the Raspberry Pi OS (but more on that in a second).
 
-* Verify Pi-hole is running via the terminal.  You should see a lot of green checks.
-    ```
-    sudo pihole status
-    ```
+Verify Pi-hole is running via the terminal.  You should see a lot of green checks.
+```
+sudo pihole status
+```
 
 * The password created by the installer is hard to remember.  If you want to change it (perhaps to the same password as that for the Raspberry Pi OS, just to make life easy), run this command on the terminal (and save the new password):
     ```
