@@ -40,29 +40,28 @@ The initial configuration of the Raspberry Pi requires a monitor, keyboard, and 
 * Connect a mouse and keyboard to the USB-A ports.  My Raspberry Pi has 4 USB-A ports.
 * Plug in the power supply to the DC power port, which on my Raspberry is also the USB-C port. The Raspberry Pi does not have an on/off button; once you connect power, it will turn on.  A small green light on the front will indicate that it has power and is booting up.
 
-When you turn on the Raspberry Pi, you will need to do some initial configuration.
+When you turn on the Raspberry Pi, you will need to do some initial configuration.  Your monitor should show the Raspberry Pi desktop and a welcome message.  (Change to the correct input source on your monitor if necessary.)  Use your mouse to click "Next" and start the setup wizard.
+* Set your country, language, and timezone.
+* Create a username and password.  This is for an account on the Raspberry Pi OS.  Store them in a secure location.  (A different account will be created later for Pi-hole.)
+* Select a WiFi network and enter the password.
+* Select Chromium as the default and check the option to uninstall the unused browser.
+* Allow the software update.
+* Once it's up to date, restart.
 
-* Your monitor should show the Raspberry Pi desktop and a welcome message.  (Change to the correct input source on your monitor if necessary.)  Use your mouse to click "Next" and start the setup wizard.
-    * Set your country, language, and timezone.
-    * Create a username and password.  This is for an account on the Raspberry Pi OS.  Store them in a secure location.  (A different account will be created later for Pi-hole.)
-    * Select a WiFi network and enter the password.
-    * Select Chromium as the default and check the option to uninstall the unused browser.
-    * Allow the software update.
-    * Once it's up to date, restart.
-* Once it restarts, you should see the Raspberry Pi OS desktop; it is similar to a MacOS or Windows.  You need to enable ssh.
-    * Start the terminal.  It's a black icon in the upper left corner.  Alternatively, try `CTRL + ALT + T`.
-    * Make sure that the OS is completely updated by running the following command in the terminal.  (If you are not aware, prefacing a command with "sudo" means "run this command as the administrator." Use sudo carefully.)  When I ran this, it did not need any updates.
-        ```
-        sudo apt update && sudo apt upgrade -y
-        ```
-    * Start the ssh service:
-        ```
-        sudo systemctl enable --now ssh
-        ```
-    * Verify that it is "active (running)" by running the following command in the terminal.  After you verify, you may need to `CTRL-C` to return to the prompt.
-        ```
-        systemctl status ssh
-        ```
+Once it restarts, you should see the Raspberry Pi OS desktop; it is similar to a MacOS or Windows.  You need to enable ssh.
+* Start the terminal.  It's a black icon in the upper left corner.  Alternatively, try `CTRL + ALT + T`.
+* Make sure that the OS is completely updated by running the following command in the terminal.  (If you are not aware, prefacing a command with "sudo" means "run this command as the administrator." Use sudo carefully.)  When I ran this, it did not need any updates.
+    ```
+    sudo apt update && sudo apt upgrade -y
+    ```
+* Start the ssh service:
+    ```
+    sudo systemctl enable --now ssh
+    ```
+* Verify that it is "active (running)" by running the following command in the terminal.  After you verify, you may need to `CTRL-C` to return to the prompt.
+    ```
+    systemctl status ssh
+    ```
 
 Because the Raspberry Pi is functioning as a DNS server, it should have as little latency as possible.  To reduce latency, connect the Raspberry Pi to your modem with an ethernet cable.
 
@@ -116,8 +115,8 @@ Now that everything is running, remove the mouse, keyboard, and HDMI cables from
 ## Administration
 
 If you ever need to turn off your Raspberry Pi, ssh to it and run this command and when it finishes, unplug the power cable.
-    * Shutdown the computer:
-        ```
-        sudo shutdown now
-        ```
-    * To start it up again, simply plug in the power cable.
+* Shutdown the computer:
+    ```
+    sudo shutdown now
+    ```
+* To start it up again, simply plug in the power cable.
